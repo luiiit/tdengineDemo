@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.data_storage.dao.MeterDao">
+    <select id="queryList" resultType="com.example.data_storage.bean.Meters">
+        select ts,current,voltage,phase,groupid,location from meters limit 10
+    </select>
+
+    <select id="queryCount" resultType="java.lang.Long">
+        select count(*) from meters
+    </select>
+
+    <insert id="insert">
+        INSERT INTO d1001(ts,current,voltage,phase) VALUES (NOW, 10.2, 219, 0.32);
+    </insert>
+
+</mapper>
